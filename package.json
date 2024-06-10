@@ -1,0 +1,16 @@
+{
+  "name": "test-technique-eversun",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "back",
+    "device"
+  ],
+  "scripts": {
+    "start": "concurrently \"yarn workspace client start\" \"yarn workspace back start\" \"yarn workspace device start\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}

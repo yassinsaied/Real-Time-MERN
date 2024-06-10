@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "4408489f-76ea-4817-9c12-5f9245e7ef5f",
+		"name": "test-technique-eversun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8692364"
+	},
+	"item": [
+		{
+			"name": "GET Devices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/devices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"devices"
+					]
+				},
+				"description": "StartFragment\n\n**Description :**  \nCet endpoint permet de récupérer la liste de tous les appareils connectés.\n\n**Requête :**\n\n- Méthode : GET\n    \n- URL : `http://127.0.0.1:5000/devices`\n    \n- Aucun paramètre requis\n    \n\n**Réponse :**\n\n- Code de statut : 200 OK\n    \n- Contenu de la réponse : JSON\n    \n\n**Exemple de Réponse :**\n\n```\n[\n  {\n    \"_id\": \"609b906a5b2e093faebd32aa\",\n    \"deviceName\": \"smartPlug1\",\n    \"currentPower\": \"500W\",\n    \"totalPowerConsumption\": \"150kWh\",\n    \"state\": \"ON\",\n    \"date\": \"2024-06-10T12:00:00.000Z\",\n    \n  },\n  {\n    \"_id\": \"609b906a5b2e093faebd32ab\",\n    \"deviceName\": \"smartPlug2\",\n    \"currentPower\": \"300W\",\n    \"totalPowerConsumption\": \"100kWh\",\n    \"state\": \"OFF\",\n    \"date\": \"2024-06-10T13:00:00.000Z\",\n   \n    \n  }\n]\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Details Device",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/devices/smartPlug1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"devices",
+						"smartPlug1"
+					]
+				},
+				"description": "StartFragment\n\n**Description :**  \nCet endpoint permet de récupérer les informations détaillées d'un appareil spécifique.\n\n**Requête :**\n\n- Méthode : GET\n    \n- URL : `http://127.0.0.1:5000/devices/smartPlug1`\n    \n- Paramètre requis : `deviceName` (nom de l'appareil)\n    \n\n**Réponse :**\n\n- Code de statut : 200 OK\n    \n- Contenu de la réponse : JSON\n    \n\n**Exemple de Réponse :**\n\n```\n{\n  \"_id\": \"609b3335b2e093faebd32aa\",\n  \"deviceName\": \"smartPlug1\",\n  \"currentPower\": \"500W\",\n  \"totalPowerConsumption\": \"150kWh\",\n  \"state\": \"ON\",\n  \"date\" : 2024-06-10T13:00:00.000Z\",\n}\n{\n  \"_id\": \"609b4446a5b2e093faebd32aa\",\n  \"deviceName\": \"smartPlug1\",\n  \"currentPower\": \"540W\",\n  \"totalPowerConsumption\": \"140kWh\",\n  \"state\": \"ON\",\n   \"date\" : 2024-05-10T13:00:00.000Z\",\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "switch  Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/devices/smartPlug1/OFF",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"devices",
+						"smartPlug1",
+						"OFF"
+					]
+				},
+				"description": "**Description :**  \nCet endpoint permet de mettre à jour l'état d'un appareil spécifique.\n\n**Requête :**\n\n- Méthode : POST\n    \n- URL : `http://127.0.0.1:5000/devices/smartPlug1/state`\n    \n- Paramètre requis : `deviceName` (nom de l'appareil)\n    \n- Corps de la requête : JSON avec la clé `state` contenant le nouvel état de l'appareil (ON ou OFF)\n    \n\n**Exemple de Corps de la Requête :**\n\n```\n{\n  \"state\": \"OFF\"\n}\n\n ```\n\n**Réponse :**\n\n- Code de statut : 200 OK\n    \n- Contenu de la réponse : JSON avec les données mises à jour de l'appareil\n    \n\n**Exemple de Réponse :**\n\n```\n{\n  \"_id\": \"609b906a5b2e093faebd32aa\",\n  \"deviceName\": \"smartPlug1\",\n  \"currentPower\": \"500W\",\n  \"totalPowerConsumption\": \"150kWh\",\n  \"state\": \"OFF\",\n  \"date\": \"2024-06-10T12:00:00.000Z\",\n \n}\n\n ```\n\nEndFragment"
+			},
+			"response": []
+		}
+	]
+}
