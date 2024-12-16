@@ -1,4 +1,4 @@
-# Test Technique Eversun
+# Description
 
 Ce projet une webapp pour historiser et afficher les informations remontées par des devices fictifsen temps réelle à l’aide du protocole MQTT.
 Composé de trois parties : un client React, un backend Express/Node et une simulation MQTT.
