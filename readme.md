@@ -7,9 +7,9 @@ Composé de trois parties : un client React, un backend Express/Node et une simu
 
 Pour installer et lancer le projet, veuillez suivre les étapes suivantes :
 
-1. Clonez le repository Git : `git clone https://github.com/yassinsaied/test-technique-eversun.git`.
+1. Clonez le repository Git : `https://github.com/yassinsaied/Real-Time-MERN.git`.
 2. Exécutez la commande suivante `mosquitto` pour la communication avec les appareils connectés .
-3. cd test-technique-eversun
+3. cd Real-Time-MERN
 4. Exécutez `yarn install` pour installer les dépendances .
 5. Exécutez `yarn start` pour lancer le projet.
 
